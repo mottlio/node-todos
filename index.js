@@ -12,6 +12,10 @@ var bodyParser = require('body-parser'); //NPM PACKAGE WHICH ALLOWS FOR PARSING 
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended : true}));
     
+//WE TELL THE EXPRESS APP WHERE THE STATIC FILES ARE:    
+    app.use(express.static(__dirname + '/views')); //dirname used in case we start the server from a different directory
+    app.use(express.static(__dirname + '/public'));
+    
 //below code defines the first routes and callbacks(with request and response args) 
     
     app.get('/', function(req, res){
