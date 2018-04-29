@@ -15,7 +15,8 @@ var bodyParser = require('body-parser'); //NPM PACKAGE WHICH ALLOWS FOR PARSING 
 //below code defines the first routes and callbacks(with request and response args) 
     
     app.get('/', function(req, res){
-        res.send("HELLO FROM THE INDEX PAGE!");
+        res.sendFile("index.html");
+        //res.send("HELLO FROM THE INDEX PAGE!");
     });
     
     app.use('/api/todos', todoRoutes);
